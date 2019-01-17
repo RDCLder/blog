@@ -1,14 +1,10 @@
 $(function () {
 
-    $('.feedback-form').submit(function (e) {
+    var data = require("../../models/database.js");
+    $('#commentSubmit').submit((e) => {
 
         e.preventDefault();
-
-        $.post('api', {
-            name: $('#feedback-form-name').val(),
-            title: $('#feedback-form-title').val(),
-            message: $('#feedback-form-message').val()
-        }, updateFeedback)
+        updateFeedback;
 
     })
 
@@ -24,8 +20,9 @@ $(function () {
     })
 
     function updateFeedback(data) {
-        var output = '';
         
+        
+        var output = '';
 
         $('.feedback-messages').html(output);
     }

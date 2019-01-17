@@ -11,28 +11,13 @@
 
     <div class="container" style="color: white">
 
-        <!-- <% if (articles.length > 0) { %>
-            <% for (var i = 0; i < articles.length; i ++) { %>
-                <div class="row">
-                <%= articles[i].title %>
-                <%= articles[i].author %>
-                <%= articles[i].category %>
-                <%= articles[i].body %>
-                <%= articles[i].publish_date %>
-                </div>
-            <% } %>
-        <% } %> -->
-
-        <%= articles.title %>
-        <%= articles.author %>
-        <%= articles.category %>
-        <%= articles.body %>
-        <%= articles.publish_date %>
-
-    </div>
-
-    <div class="container" style="color:white">
-        <form action="commentSubmit" method="POST">
+        <%= pageTitle %>
+        <%= author %>
+        <%= publish_date %>
+        <%= category %>
+        <%= article_body %>
+   
+        <form action="" method="POST" id="commentSubmit">
             <div class="form-group">
                 <label for="feedback-form-name">Username</label>
                 <input type="text" class="form-control" id="comment_username" name="username" placeholder="Enter your username">
@@ -45,7 +30,19 @@
             </div>
             <button type="submit" class="btn btn-default pull-right">Submit</button>
         </form>
+
+        <% if (comments.length > 0) { %>
+            <% for (var i = 0; i < comments.length; i ++) { %>
+                <div class="row">
+                    <%= comments[i].username %>
+                    <br>
+                    <%= comments[i].comment_body %>
+                </div>
+            <% } %>
+        <% } %>
+
     </div>
+
 
     </div>
     <!-- End of Navbar/Sidebar Wrapper -->
