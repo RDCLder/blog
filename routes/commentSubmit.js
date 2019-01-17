@@ -14,7 +14,6 @@ router.use(body_parser.urlencoded({ extended: false }));
 router.post("/commentSubmit", (req, res) => {
     var username = req.body.username;
     var body = req.body.body;
-    var DEFAULT = 1;
 
     db.none("INSERT INTO comments(username, body)VALUES($1,$2)", [username, body])
         .then((data) => {

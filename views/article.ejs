@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <% include partials/head.ejs %>
+</head>
+
+<body>
+
+    <% include partials/navbar.ejs %>
+
+    <div class="container" style="color: white">
+
+        <!-- <% if (articles.length > 0) { %>
+            <% for (var i = 0; i < articles.length; i ++) { %>
+                <div class="row">
+                <%= articles[i].title %>
+                <%= articles[i].author %>
+                <%= articles[i].category %>
+                <%= articles[i].body %>
+                <%= articles[i].publish_date %>
+                </div>
+            <% } %>
+        <% } %> -->
+
+        <%= articles.title %>
+        <%= articles.author %>
+        <%= articles.category %>
+        <%= articles.body %>
+        <%= articles.publish_date %>
+
+    </div>
+
+    </div>
+    <!-- End of Navbar/Sidebar Wrapper -->
+
+    <div class="overlay"></div>
+    <% include partials/jsdefaults.ejs %>
+
+</body>
+
+</html>
