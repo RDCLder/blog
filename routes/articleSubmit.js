@@ -19,7 +19,7 @@ router.post("/articleSubmit", (req, res) => {
     var body = req.body.body;
     var DEFAULT = 1;
 
-    db.none("INSERT INTO articles( title, body)VALUES($1,$2)", [title, body])
+    db.none("INSERT INTO articles( title, article_body)VALUES($1,$2)", [title, body])
         .then((data) => {
             // db.any('SELECT * FROM')
             console.log("Success");
