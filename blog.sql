@@ -14,8 +14,8 @@
 -- CREATE TABLE articles (
 --     id SERIAL PRIMARY KEY,
 --     title VARCHAR(50),
---     author_id INTEGER REFERENCES authors (id),
---     category INTEGER REFERENCES categories (id),
+--     author_id INTEGER REFERENCES authors (author_id),
+--     category INTEGER REFERENCES categories (category_id),
 --     article_body VARCHAR,
 --     publish_date DATE,
 --     visible BOOLEAN

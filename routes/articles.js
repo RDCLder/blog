@@ -5,21 +5,38 @@ const body_parser = require("body-parser");
 
 router.get("/article/:articleID", (req, res) => {
 
-    var articleID = Number(req.params.articleID);
-
-    db.query("SELECT * FROM articles INNER JOIN comments ON articles.id = comments.article_id WHERE articles.id = '" + articleID + "'").then(r => {
-        console.log(r);
-        res.render("article", {
-            pageTitle: r[0].title,
-            pageID: r[0].title,
-            category: r[0].category,
-            publish_date: r[0].publish_date, 
-            article_body: r[0].article_body,
-            author: r[0].author_id,
-            comments: r
+    var articleID = Number(req.params.articleID)
+    db.query("SELECT COUNT(*) FROM articles INNER JOIN comments ON articles.id = comments.article_id WHERE articles.id = '" + articleID + "'")
+        .then(length=>{
+            console.log (length[0].count)
+            if(Number(length[0].count) > 0){
+                db.query("SELECT * FROM articles INNER JOIN comments ON articles.id = comments.article_id WHERE articles.id = '" + articleID + "'").then(r => {
+                    console.log("hello");
+                    res.render("article", {
+                        pageTitle: r[0].title,
+                        pageID: r[0].title,
+                        category: r[0].category,
+                        publish_date: r[0].publish_date, 
+                        article_body: r[0].article_body,
+                        author: r[0].author_id,
+                        comments: r
+                    });
+                });
+                }else{
+                    db.query("SELECT * FROM articles WHERE articles.id = '" + articleID + "'").then(r => {
+                        console.log("nope");
+                        res.render("article", {
+                            pageTitle: r[0].title,
+                            pageID: r[0].title,
+                            category: r[0].category,
+                            publish_date: r[0].publish_date, 
+                            article_body: r[0].article_body,
+                            author: r[0].author_id,
+                            comments: r
+                        });
+                    });
+                }
         });
-    });
-
 });
 
 router.use(body_parser.urlencoded({ extended: false }));
