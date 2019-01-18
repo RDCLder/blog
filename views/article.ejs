@@ -17,7 +17,7 @@
         <%= category %>
         <%= article_body %>
    
-        <form action="" method="POST" id="commentSubmit">
+        <form method="POST" id="commentSubmit">
             <div class="form-group">
                 <label for="feedback-form-name">Username</label>
                 <input type="text" class="form-control" id="comment_username" name="username" placeholder="Enter your username">
@@ -35,9 +35,9 @@
             <% if (comments.length > 0) { %>
             <% for (var i = 0; i < comments.length; i ++) { %>
             <div class="row m-0 p-0" style="border: solid red;">
-                <%= comments[i].username %>
+                <%= comments[comments.length - i - 1].username %>
                 <br>
-                <%= comments[i].comment_body %>
+                <%= comments[comments.length - i - 1].comment_body %>
             </div>
             <% } %>
             <% } %>
@@ -51,7 +51,7 @@
 
     <div class="overlay"></div>
     <% include partials/jsdefaults.ejs %>
-    <script type="module" src="/scripts/comments.js"></script>
+    <script src = "/scripts/comments.js"></script>
 
 </body>
 

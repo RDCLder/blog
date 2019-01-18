@@ -44,6 +44,39 @@ router.post("/article/:articleID", (req, res) => {
     var username = req.body.username;
     var body = req.body.body;
 
+    res.status(204).send();
+
+    // db.query("SELECT COUNT(*) FROM articles INNER JOIN comments ON articles.id = comments.article_id WHERE articles.id = '" + articleID + "'")
+    // .then(length => {
+
+    //     if (Number(length[0].count) > 0) {
+    //         db.query("SELECT * FROM articles INNER JOIN comments ON articles.id = comments.article_id WHERE articles.id = '" + articleID + "'").then(r => {
+    //             res.render("article", {
+    //                 pageTitle: r[0].title,
+    //                 pageID: r[0].title,
+    //                 category: r[0].category,
+    //                 publish_date: r[0].publish_date,
+    //                 article_body: r[0].article_body,
+    //                 author: r[0].author_id,
+    //                 comments: r
+    //             });
+    //         });
+    //     }
+    //     else {
+    //         db.query("SELECT * FROM articles WHERE articles.id = '" + articleID + "'").then(r => {
+    //             res.render("article", {
+    //                 pageTitle: r[0].title,
+    //                 pageID: r[0].title,
+    //                 category: r[0].category,
+    //                 publish_date: r[0].publish_date,
+    //                 article_body: r[0].article_body,
+    //                 author: r[0].author_id,
+    //                 comments: r
+    //             });
+    //         });
+    //     }
+    // })
+
     db.none("INSERT INTO comments(username, comment_body, article_id )VALUES($1,$2,$3)", [
         username,
         body,
