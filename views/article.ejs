@@ -31,15 +31,17 @@
             <button type="submit" class="btn btn-default pull-right">Submit</button>
         </form>
 
-        <% if (comments.length > 0) { %>
+        <div class="row m-0 p-0" id="commentsContainer" style="border: solid orange; display: block">
+            <% if (comments.length > 0) { %>
             <% for (var i = 0; i < comments.length; i ++) { %>
-                <div class="row">
-                    <%= comments[i].username %>
-                    <br>
-                    <%= comments[i].comment_body %>
-                </div>
+            <div class="row m-0 p-0" style="border: solid red;">
+                <%= comments[i].username %>
+                <br>
+                <%= comments[i].comment_body %>
+            </div>
             <% } %>
-        <% } %>
+            <% } %>
+        </div>
 
     </div>
 
@@ -49,6 +51,7 @@
 
     <div class="overlay"></div>
     <% include partials/jsdefaults.ejs %>
+    <script type="module" src="/scripts/comments.js"></script>
 
 </body>
 

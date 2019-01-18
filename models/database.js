@@ -8,7 +8,7 @@ const config = {
     host: 'localhost',
     port: 5432,
     database: 'blog',
-    user: 'erickthai'
+    user: 'rdclder'
 }
 
 const pgp = require('pg-promise')(initOptions);
