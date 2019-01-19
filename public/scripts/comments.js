@@ -1,16 +1,18 @@
-// $(function () {
+$(function () {
 
     // var data = require("../../models/database");
     // import { db } from "../../models/database.js"
     // var data = db();
     console.log("Step 1");
     $('#commentSubmit').submit((e) => {
-        // e.preventDefault();
         updateComments();
-        $("#comment_username").val("");
-        $("#comment_body").val("");
         console.log("Called updateFeedback");
+        setTimeout(()=>{
+            $('#commentSubmit')[0].reset()
+            console.log('settime')
+        },500)
     })
+
 
     // $('.feedback-messages').on('click', (e) => {
     //     if (e.target.className == "glyphicon glyphicon-remove") {
@@ -47,4 +49,4 @@
             `
         );
     }
-// });
+});
