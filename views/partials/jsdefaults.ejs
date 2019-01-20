@@ -71,24 +71,23 @@
 
     /* Set the width of the side navigation to 0 */
     function closeNav() {
-        // document.getElementById("mySidenav").style.width = "0";
         // document.getElementById("mySidenav").style.display = "none";
         setTimeout(() => {
             document.getElementById("box1").classList.remove("fadeInUp");
             document.getElementById("box1").classList.add("fadeOutDown");
-        }, 500);
+        }, 100);
         setTimeout(() => {
             document.getElementById("box2").classList.remove("fadeInUp");
             document.getElementById("box2").classList.add("fadeOutDown");
-        }, 700);
+        }, 200);
         setTimeout(() => {
             document.getElementById("box3").classList.remove("fadeInUp");
             document.getElementById("box3").classList.add("fadeOutDown");
-        }, 900);
+        }, 300);
         setTimeout(() => {
             document.getElementById("box4").classList.remove("fadeInUp");
             document.getElementById("box4").classList.add("fadeOutDown");
-        }, 1100);
+        }, 400);
 
         setTimeout(() => {
             document.getElementById("box1").classList.remove("d-flex");
@@ -100,16 +99,16 @@
             document.getElementById("box4").classList.remove("d-flex");
             document.getElementById("box4").classList.remove("animated");
 
-        }, 1600);
+        }, 1000);
 
 
         // document.getElementById("sidenavbox").classList.remove("slow");
         setTimeout(() => {
-            document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("mySidenav").style.width = "0";
             document.getElementById("box1").classList.add("hideandflex");
             document.getElementById("box2").classList.add("hideandflex");
             document.getElementById("box3").classList.add("hideandflex");
             document.getElementById("box4").classList.add("hideandflex");
-        },1600);
+        },1000);
     }
 </script>
