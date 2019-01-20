@@ -3,31 +3,89 @@
     crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
     crossorigin="anonymous"></script>
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS, then MDB -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.1/js/mdb.min.js"></script>
+
 <!-- jQuery Custom Scroller CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <!-- Sidebar Script -->
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
-        $('#dismiss, .overlay').on('click', function () {
-            $('#sidebar').removeClass('active');
-            $('.overlay').removeClass('active');
-        });
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').addClass('active');
-            $('.overlay').addClass('active');
-            $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-        });
-    });
+    // $(document).ready(function () {
+    //     $("#sidebar").mCustomScrollbar({
+    //         theme: "minimal"
+    //     });
+    //     $('#dismiss, .overlay').on('click', function () {
+    //         $('#sidebar').removeClass('active');
+    //         $('.overlay').removeClass('active');
+    //     });
+    //     $('#sidebarCollapse').on('click', function () {
+    //         $('#sidebar').addClass('active');
+    //         $('.overlay').addClass('active');
+    //         $('.collapse.in').toggleClass('in');
+    //         $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    //     });
+    // });
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100vw";
+        setTimeout( ()=>{
+            document.getElementById("box1").classList.remove("hideandflex");
+            document.getElementById("box1").classList.add("d-flex");
+            document.getElementById("box1").classList.add("animated");
+            document.getElementById("box1").classList.add("fadeInUp");
+            // document.getElementById("sidenavbox").classList.add("slow");
+        },500)
+        setTimeout( ()=>{
+            document.getElementById("box2").classList.remove("hideandflex");
+            document.getElementById("box2").classList.add("d-flex");
+            document.getElementById("box2").classList.add("animated");
+            document.getElementById("box2").classList.add("fadeInUp");
+        },700)
+        setTimeout( ()=>{
+            document.getElementById("box3").classList.remove("hideandflex");
+            document.getElementById("box3").classList.add("d-flex");
+            document.getElementById("box3").classList.add("animated");
+            document.getElementById("box3").classList.add("fadeInUp");
+        },900)
+        setTimeout( ()=>{
+            document.getElementById("box4").classList.remove("hideandflex");
+            document.getElementById("box4").classList.add("d-flex");
+            document.getElementById("box4").classList.add("animated");
+            document.getElementById("box4").classList.add("fadeInUp");
+        },1100)
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("box1").classList.remove("d-flex");
+        document.getElementById("box1").classList.remove("animated");
+        document.getElementById("box1").classList.remove("fadeInUp");
+        document.getElementById("box2").classList.remove("d-flex");
+        document.getElementById("box2").classList.remove("animated");
+        document.getElementById("box2").classList.remove("fadeInUp");
+        document.getElementById("box3").classList.remove("d-flex");
+        document.getElementById("box3").classList.remove("animated");
+        document.getElementById("box3").classList.remove("fadeInUp");
+        document.getElementById("box4").classList.remove("d-flex");
+        document.getElementById("box4").classList.remove("animated");
+        document.getElementById("box4").classList.remove("fadeInUp");
+        // document.getElementById("sidenavbox").classList.remove("slow");
+        setTimeout(() => {
+            document.getElementById("box1").classList.add("hideandflex");
+            document.getElementById("box2").classList.add("hideandflex");
+            document.getElementById("box3").classList.add("hideandflex");
+            document.getElementById("box4").classList.add("hideandflex");
+
+
+        },500);
+    }
 </script>

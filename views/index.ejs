@@ -5,14 +5,19 @@
     <% include partials/head.ejs %>
 </head>
 
-<body>
-
-    <% include partials/navbar.ejs %>
-    <div class="container">
-        
+<body style = "color:white">
+    
+    <div class = "container-fluid" style = "height:100vh">
+        <% include partials/navbar2.ejs %>
+        <div class = "container d-flex align-items-center" style = "height:80vh">
+            <div class="container d-flex justify-content-center align-items-center flex-column animated fadeInDown slow" style = "height:30vh">
+                <h1>THE BLOG</h1>
+                <a href="/articleSubmit" class="button1">Post Article</a>
+            </div>
+        </div>
     </div>
 
-</div>
+
 <!-- End of Navbar/Sidebar Wrapper -->
 
     <div class="overlay"></div>
